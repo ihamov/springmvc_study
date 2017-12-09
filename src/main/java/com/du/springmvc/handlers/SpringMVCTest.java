@@ -11,6 +11,17 @@ public class SpringMVCTest {
     public static final String SUCCESS = "success";
 
     /**
+     * 了解：可以使用params和headers来更加精确的映射请求，params和headers支持简单的表大式
+     * @return
+     */
+    @RequestMapping(value = "testParamsAndHeaders",
+            params = {"username", "age!=10"}, headers = {"Accept-Language=zh-CN"})
+    public String testParamsAndHeaders(){
+        System.out.println("testParamsAndHeaders");
+        return SUCCESS;
+    }
+
+    /**
      * 使用method属性来指定请求方式
      * @return
      */
