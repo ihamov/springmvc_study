@@ -10,6 +10,12 @@ public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
 
+    @RequestMapping(value = "testAntAndPath/*/abc")
+    public String testAntAndPath(){
+        System.out.println("testAntAndPath");
+        return SUCCESS;
+    }
+
     /**
      * 了解：可以使用params和headers来更加精确的映射请求，params和headers支持简单的表大式
      * @return

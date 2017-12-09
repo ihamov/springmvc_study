@@ -7,6 +7,9 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testAntAndPath/ttt/abc">Test AntAndPath</a>
+    <br><br>
+
     <a href="springmvc/testParamsAndHeaders?username=du&age=10">Test ParamsAndHeaders</a>
     <br><br>
 
