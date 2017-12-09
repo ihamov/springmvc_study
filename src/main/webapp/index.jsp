@@ -7,6 +7,9 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testPathVariable/1">Test PathVariable</a>
+    <br><br>
+
     <a href="springmvc/testAntAndPath/ttt/abc">Test AntAndPath</a>
     <br><br>
 
