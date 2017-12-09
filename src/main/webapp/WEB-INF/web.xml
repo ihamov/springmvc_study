@@ -10,6 +10,11 @@
     <servlet-name>springDispatcherServlet</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
     <!-- 配置DispatcherServlet的初始化参数：配置springmvc 配置文件的位置和名称 -->
+    <!--
+        实际上也可以不通过contextConfigLocation 来配置 Spring MVC的配置文件，而使用默认的
+        默认的配置文件为：/WEB-INF/<servlet-name>-servlet.xml
+        本例即：springDispatcherServlet-servlet.xml
+    -->
     <init-param>
       <param-name>contextConfigLocation</param-name>
       <param-value>classpath:springmvc.xml</param-value>
