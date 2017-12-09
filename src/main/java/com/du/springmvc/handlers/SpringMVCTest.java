@@ -2,12 +2,23 @@ package com.du.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-@RequestMapping("/springmvc")
+@RequestMapping("springmvc")
 public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
+
+    /**
+     * 使用method属性来指定请求方式
+     * @return
+     */
+    @RequestMapping(value = "testMethod", method = RequestMethod.POST)
+    public String testMethod(){
+        System.out.println("testMethod");
+        return SUCCESS;
+    }
 
     /**
      * 1、@RequestMapping 除了修饰方法还可以修饰类

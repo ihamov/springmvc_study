@@ -5,8 +5,16 @@
 </head>
 <body>
     <h2>Hello World!</h2>
+
+    <form action="springmvc/testMethod" method="post">
+        <input type="submit" value="Submit">
+    </form>
+
+    <a href="springmvc/testMethod">Test Method</a>
+    <br><br>
+
     <a href="springmvc/testRequestMapping">Test RequestMapping</a>
-    <br>
+    <br><br>
     <a href="helloworld">Hello World</a>
 </body>
 </html>
