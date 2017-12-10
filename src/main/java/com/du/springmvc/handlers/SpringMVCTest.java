@@ -1,15 +1,42 @@
 package com.du.springmvc.handlers;
 
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 @Controller
 @RequestMapping("springmvc")
 public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
+
+    /**
+     * 了解
+     * 注解@RequestHeader 用法与@RequestParam相同
+     * 作用：映射请求头信息
+     * @param al
+     * @return
+     */
+    @RequestMapping(value = "testRequestHeader")
+    public String testRequestHeader(@RequestHeader(value = "Accept-Language") String al){
+        System.out.println("testRequestHeader Accept-Language:"+al);
+        return SUCCESS;
+    }
+
+    /**
+     * 注解 @RequestParam 来映射请求参数。
+     * value 为请求参数的参数名
+     * required 为该参数是否必须，默认为true
+     * defaultValue 请求参数的默认值
+     * @param username
+     * @param age
+     * @return
+     */
+    @RequestMapping(value = "testRequestParam")
+    public String testRequestParam(@RequestParam(value = "username") String username,
+                                   @RequestParam(value = "age", required = false, defaultValue = "0") int age) {
+        System.out.println("testRequestParam, username:"+username+" age:"+age);
+        return SUCCESS;
+    }
 
 
     /**

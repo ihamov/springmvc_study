@@ -7,6 +7,12 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testRequestHeader">Test RequestHeader</a>
+    <br><br>
+
+    <a href="springmvc/testRequestParam?username=du&age=11">Test RequestParam</a>
+    <br><br>
+
     <form action="springmvc/testRest/1" method="post">
         <input type="hidden" name="_method" value="PUT">
         <input type="submit" value="Test Rest PUT">
