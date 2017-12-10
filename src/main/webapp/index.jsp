@@ -7,6 +7,9 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testCookieValue">Test CookieValue</a>
+    <br><br>
+
     <a href="springmvc/testRequestHeader">Test RequestHeader</a>
     <br><br>
 
