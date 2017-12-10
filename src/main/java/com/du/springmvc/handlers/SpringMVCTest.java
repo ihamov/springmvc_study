@@ -11,6 +11,52 @@ public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
 
+
+    /**
+     * REST 风格的 URL
+     * 以CRUD为例：
+     * 新增：/order POST
+     * 修改：/order/1 PUT
+     * 获取：/order/1 GET
+     * 删除：/order/1 DELETE
+     * 如何发送 PUT 和 DELETE 请求？
+     * 1、需要配置HiddenHttpMethodFilter
+     * 2、需要发送POST请求
+     * 3、需要在发送POST请求时携带一个 name="_method" 的隐藏域,值为DELETE或PUT
+     * 例如
+     * <form action="springmvc/testRest/1" method="post">
+     *  <input type="hidden" name="_method" value="PUT">
+     *  <input type="submit" value="Test Rest PUT">
+     * </form>
+     * 使用PathVariable注解获取该值。
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "testRest/{id}", method = RequestMethod.PUT)
+    public String testRestPUT(@PathVariable(value = "id") Integer id){
+        System.out.println("testRestPUT:"+id);
+        return SUCCESS;
+    }
+
+    @RequestMapping(value = "testRest/{id}", method = RequestMethod.DELETE)
+    public String testRestDELETE(@PathVariable(value = "id") Integer id){
+        System.out.println("testRestDELETE:"+id);
+        return SUCCESS;
+    }
+
+    @RequestMapping(value = "testRest", method = RequestMethod.POST)
+    public String testRestPOST(){
+        System.out.println("testRestPOST");
+        return SUCCESS;
+    }
+
+    @RequestMapping(value = "testRest/{id}", method = RequestMethod.GET)
+    public String testRestGET(@PathVariable(value = "id") Integer id){
+        System.out.println("testRestGET:"+id);
+        return SUCCESS;
+    }
+
+
     /**
      * @PathVariable 注解可以映射URL中的占位符到目标方法的参数中
      * @param id
