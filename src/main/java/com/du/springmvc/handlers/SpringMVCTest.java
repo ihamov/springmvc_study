@@ -1,5 +1,6 @@
 package com.du.springmvc.handlers;
 
+import com.du.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
@@ -8,6 +9,18 @@ import org.springframework.web.bind.annotation.*;
 public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
+
+    /**
+     * Spring MVC 会按请求参数名和POJO属性名进行自动匹配，
+     * 自动为该对象填充属性，只会级联属性，即address.city形式，为user中address的city填充。
+     * @param user
+     * @return
+     */
+    @RequestMapping(value = "testPojo")
+    public String testPojo(User user){
+        System.out.println("testPojo:"+user);
+        return SUCCESS;
+    }
 
     /**
      * 了解
