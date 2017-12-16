@@ -4,11 +4,41 @@ import com.du.springmvc.entities.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.io.Writer;
+
 @Controller
 @RequestMapping("springmvc")
 public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
+
+
+    /**
+     * 可以使用Servlet原生API作为目标方法的参数
+     * 具体支持一下类型
+     * HttpServletRequest
+     * HttpServletResponse
+     * HttpSession
+     * java.security.Principal
+     * Locale
+     * InputStream
+     * OutputStream
+     * Reader
+     * Writer
+     *
+     * @param request
+     * @param response
+     * @return
+     */
+    @RequestMapping(value = "testServletAPI")
+    public void testServletAPI(HttpServletRequest request, HttpServletResponse response, Writer out) throws IOException {
+        System.out.println("testServletAPI, "+ request+ ", "+ response);
+        out.write("hello springmvc");
+//        return SUCCESS;
+    }
 
     /**
      * Spring MVC 会按请求参数名和POJO属性名进行自动匹配，

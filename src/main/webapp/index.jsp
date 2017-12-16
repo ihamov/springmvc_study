@@ -7,6 +7,10 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testServletAPI">Test ServletAPI</a>
+    <br><br>
+
+    <br><br>
 
     <form action="springmvc/testPojo" method="post">
         username:<input type="text" name="username">
