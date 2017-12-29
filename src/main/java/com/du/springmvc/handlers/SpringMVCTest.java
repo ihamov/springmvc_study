@@ -11,11 +11,27 @@ import java.io.Writer;
 import java.util.Arrays;
 import java.util.Map;
 
+@SessionAttributes(value = {"user"}, types = {String.class})
 @Controller
 @RequestMapping("springmvc")
 public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
+
+    /**
+     * SessionAttributes注解，除了可以通过属性名指定需要放到会话里的属性外，(根据value进行设置)
+     * 还可以通过模型属性的对象类型来指定哪些模型属性需要放到会话里。(根据types执行设置)
+     * 该注解只能放在类上面，不能放在方法的上面。
+     * @param map
+     * @return
+     */
+    @RequestMapping(value = "testSessionAttributes")
+    public String testSessionAttributes(Map<String, Object> map){
+        User user = new User("Tom", "123456", "tom@126.com", 12);
+        map.put("user", user);
+        map.put("school", "二中");
+        return SUCCESS;
+    }
 
     /**
      * 目标方法可以添加Map类型的参数,也可以是Model类型或ModelMap类型

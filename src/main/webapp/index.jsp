@@ -7,6 +7,9 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <a href="springmvc/testSessionAttributes">Test SessionAttributes</a>
+    <br><br>
+
     <a href="springmvc/testMap">Test Map</a>
     <br><br>
 
