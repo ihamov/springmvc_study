@@ -16,4 +16,20 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
+    <!-- 配置国际化资源文件 -->
+    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+        <property name="basename" value="i18n"/>
+        <!-- 资源文件编码为UTF-8需要进行配置 -->
+        <property name="defaultEncoding" value="UTF-8"/>
+    </bean>
+
+    <!-- 配置直接转发的页面
+        可以直接相应的转发页面，无需经过Handler 的方法。
+        http://localhost:8080/springmvc/success
+     -->
+    <mvc:view-controller path="/success" view-name="success"/>
+
+    <!-- 在实际开发中通常都需要配置否则 mvc:view-controller 等配置将导致其他的请求报错-->
+    <mvc:annotation-driven/>
+
 </beans>

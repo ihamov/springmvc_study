@@ -18,6 +18,12 @@ public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
 
+    @RequestMapping(value = "testViewAndViewResolver")
+    public String testViewAndViewResolver(){
+        System.out.println("testViewAndViewResolver");
+        return SUCCESS;
+    }
+
     /**
      * 1. 由ModelAttribute注解标记的方法，会在每个目标方法执行之前被Spring MVC 调用
      * 2. @ModelAttribute 注解也可以来修饰目标方法 POJO 类型的入参, 其 value 属性值有如下的作用:
