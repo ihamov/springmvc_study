@@ -7,6 +7,23 @@
     <h2>Hello World!</h2>
     <br><br>
 
+    <!--
+        模拟修改操作
+        1.原始数据为，1, TOM, 123456，tom@126.com, 12
+        2.密码不能修改
+        3.表单回显，模拟操作直接在表单填写对应的属性值
+    -->
+    <form action="springmvc/testModelAttribute" method="post">
+        <input type="hidden" name="id" value="1"/>
+        username:<input type="text" name="username" value="Tom"/>
+        <br>
+        email:<input type="text" name="email" value="tom@126.com"/>
+        <br>
+        age:<input type="text" name="age" value="12"/>
+        <br>
+        <input type="submit" value="submit"/>
+    </form>
+    <br><br>
     <a href="springmvc/testSessionAttributes">Test SessionAttributes</a>
     <br><br>
 
