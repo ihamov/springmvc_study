@@ -10,10 +10,18 @@
     <!-- 配置自动扫描的包 -->
     <context:component-scan base-package="com.du.springmvc"/>
 
-    <!-- 配置视图解析器：如何把handler方法返回值解析为实际的物理视图-->
+    <!-- 配置视图解析器：如何把handler方法返回值解析为实际的物理视图
+        默认优先级为：Integer.MAX_VALUE
+     -->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/views/" />
         <property name="suffix" value=".jsp"/>
+    </bean>
+
+    <!-- 配置视图BeanNameViewResolver解析器:使用视图的名字来解析视图 -->
+    <!-- 通过order属性来定义视图解析器优先级，值越小优先级越高 -->
+    <bean id="beanNameViewResolver" class="org.springframework.web.servlet.view.BeanNameViewResolver">
+        <property name="order" value="100"/>
     </bean>
 
     <!-- 配置国际化资源文件 -->

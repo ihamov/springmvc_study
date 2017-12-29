@@ -18,6 +18,14 @@ public class SpringMVCTest {
 
     public static final String SUCCESS = "success";
 
+
+    @RequestMapping(value = "testView")
+    public String testView(){
+        System.out.println("testView");
+        return "helloView";
+    }
+
+
     @RequestMapping(value = "testViewAndViewResolver")
     public String testViewAndViewResolver(){
         System.out.println("testViewAndViewResolver");
